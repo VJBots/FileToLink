@@ -11,16 +11,16 @@
     <br />
    </strong></a>
     <br />
-    <a href="https://github.com/adarsh-goel/pro/issues">Report a Bug</a>
+    <a href="https://telegram.dog/vjbots_bot">Report a Bug</a>
     |
-    <a href="https://github.com/adarsh-goel/filestreambot-pro/issues">Request Feature</a>
+    <a href="https://telegram.dog/vjbots_bot">Request Feature</a>
   </p>
 
 
 <hr>
 
 ## Please Follow me so you know whenever I release a new Project!❤️‍🔥
-### Incase you are having trouble deploying bot you may hire developer we have reasonable rates [click here](https://t.me/+KvjFjOWicuZmOTQx)
+### Incase you are having trouble deploying bot you may hire developer we have reasonable rates [click here](https://telegram.dog/vjbots_bot)
 
 ## 🍁 About This Bot :
 
@@ -83,8 +83,8 @@ then goto the <a href="#mandatory-vars">variables tab</a> for more info on setti
 
 
 ```py
-git clone https://github.com/adarsh-goel/filestreambot-pro
-cd filestreambot-pro
+git clone https://github.com/VJBots/FileToLink
+cd FileToLink
 virtualenv -p /usr/bin/python3 venv
 . ./venv/bin/activate
 pip install -r requirements.txt
@@ -131,7 +131,7 @@ DATABASE_URL=mongodb_uri
 
 `DATABASE_URL` : MongoDB URI for saving User IDs when they first Start the Bot. We will use that for Broadcasting to them. I will try to add more features related with Database. If you need help to get the URI you can click on logo below!
 
-[![mongo](https://telegra.ph/file/fd68906852c71fdd68bef.jpg)](https://www.youtube.com/watch?v=HhHzCfrqsoE)
+[![mongo](https://telegra.ph/file/fd68906852c71fdd68bef.jpg)](https://youtu.be/I36_OTWvT2w)
 
  Option Vars
 
@@ -168,5 +168,5 @@ Bot also Supported with Channels. Just add bot Channel as Admin. If any new file
 
 ### Credits : 
 
-- [Me](https://github.com/adarsh-goel)
+- [Adarsh-Goel](https://github.com/adarsh-goel)
 - Everyone In This Journey !
