@@ -1,6 +1,6 @@
-pyrogram<=2.0.33
-tgcrypto<=1.2.3
-aiohttp<=3.8.1
+pyrofork
+tgcrypto
+aiohttp
 python-dotenv<=0.20.0
 motor
 aiofiles
@@ -8,4 +8,3 @@ dnspython
 apscheduler
 requests
 psutil
-pyromod
