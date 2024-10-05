@@ -20,8 +20,6 @@ logging.getLogger("aiohttp").setLevel(logging.ERROR)
 logging.getLogger("aiohttp.web").setLevel(logging.ERROR)
 
 from pyrogram import Client, idle 
-from pyromod import listen
-from database.ia_filterdb import Media
 from database.users_chats_db import db
 from info import *
 from utils import temp
@@ -30,7 +28,6 @@ from Script import script
 from datetime import date, datetime 
 from aiohttp import web
 from plugins import web_server
-from plugins.clone import restart_bots
 
 from TechVJ.bot import TechVJBot
 from TechVJ.util.keepalive import ping_server
@@ -60,10 +57,6 @@ async def start():
             print("Tech VJ Imported => " + plugin_name)
     if ON_HEROKU:
         asyncio.create_task(ping_server())
-    b_users, b_chats = await db.get_banned()
-    temp.BANNED_USERS = b_users
-    temp.BANNED_CHATS = b_chats
-    await Media.ensure_indexes()
     me = await TechVJBot.get_me()
     temp.BOT = TechVJBot
     temp.ME = me.id
@@ -76,10 +69,6 @@ async def start():
     now = datetime.now(tz)
     time = now.strftime("%H:%M:%S %p")
     await TechVJBot.send_message(chat_id=LOG_CHANNEL, text=script.RESTART_TXT.format(today, time))
-    if CLONE_MODE == True:
-        print("Restarting All Clone Bots.......")
-        await restart_bots()
-        print("Restarted All Clone Bots.")
     app = web.AppRunner(await web_server())
     await app.setup()
     bind_address = "0.0.0.0"
