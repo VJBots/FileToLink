@@ -1,4 +1,4 @@
-pyrofork
+pyrofork==2.3.45
 tgcrypto
 aiohttp
 python-dotenv<=0.20.0
