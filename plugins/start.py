@@ -3,7 +3,7 @@ import humanize
 from Script import script
 from pyrogram import Client, filters, enums
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ForceReply, CallbackQuery
-from info import URL, LOG_CHANNEL, PICS, SHORTNER
+from info import URL, LOG_CHANNEL, PICS, SHORTLINK
 from urllib.parse import quote_plus
 from TechVJ.util.file_properties import get_name, get_hash, get_media_file_size
 from TechVJ.util.human_readable import humanbytes
@@ -38,7 +38,7 @@ async def stream_start(client, message):
         file_id=fileid,
     )
     fileName = {quote_plus(get_name(log_msg))}
-    if SHORTNER == False:
+    if SHORTLINK == False:
         stream = f"{URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
         download = f"{URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
     else:
