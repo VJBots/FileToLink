@@ -10,7 +10,7 @@ API_HASH = environ.get('API_HASH', '5e7c4088f8e23d0ab61e29ae11960bf5')
 BOT_TOKEN = environ.get('BOT_TOKEN', "7100825426:AAEFmkfU6-yNk2sBI1V8xXfRpQ3b_pPSqwk")
 
 # Bot settings
-PICS = (environ.get('PICS', 'https://graph.org/file/ce1723991756e48c35aa1.jpg')).split()
+PICS = (environ.get('PICS', 'https://i.ibb.co/qJyZWCv/20230629-081948-0000.png')).split()
 PORT = environ.get("PORT", "8080")
 
 # Online Stream and Download
