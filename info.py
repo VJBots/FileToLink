@@ -11,6 +11,7 @@ BOT_TOKEN = environ.get('BOT_TOKEN', "")
 
 # Bot settings
 PICS = (environ.get('PICS', 'https://graph.org/file/ce1723991756e48c35aa1.jpg')).split()
+PORT = environ.get("PORT", "8080")
 
 # Online Stream and Download
 MULTI_CLIENT = False
