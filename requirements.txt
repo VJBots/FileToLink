@@ -9,3 +9,4 @@ apscheduler
 requests
 psutil
 shortzy
+jinja2
