@@ -8,3 +8,4 @@ dnspython
 apscheduler
 requests
 psutil
+shortzy
