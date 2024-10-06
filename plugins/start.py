@@ -8,7 +8,7 @@ from urllib.parse import quote_plus
 from TechVJ.util.file_properties import get_name, get_hash, get_media_file_size
 from TechVJ.util.human_readable import humanbytes
 from database.users_chats_db import db
-from utils import temp
+from utils import temp, get_shortlink
 
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
