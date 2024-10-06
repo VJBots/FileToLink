@@ -15,10 +15,15 @@ async def start(client, message):
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(message.from_user.id, message.from_user.first_name)
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
+    rm = InlineKeyboardMarkup(
+        [[
+            InlineKeyboardButton("✨ Update Channel", url="https://t.me/vj_botz")
+        ]] 
+    )
     await client.send_message(
         chat_id=message.from_user.id,
         text=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
-        reply_markup=reply_markup,
+        reply_markup=rm,
         parse_mode=enums.ParseMode.HTML
     )
     return
@@ -56,7 +61,7 @@ async def stream_start(client, message):
         [
             [
                 InlineKeyboardButton("sᴛʀᴇᴀᴍ 🖥", url=stream),
-                InlineKeyboardButton('ᴅᴏᴡɴʟᴏᴀᴅ 📥', url=download)
+                InlineKeyboardButton("ᴅᴏᴡɴʟᴏᴀᴅ 📥", url=download)
             ]
         ] 
     )
