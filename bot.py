@@ -1,8 +1,6 @@
-# Don't Remove Credit @VJ_Botz
-# Subscribe YouTube Channel For Amazing Bot @Tech_VJ
-# Ask Doubt on telegram @KingVJ01
-
-# Clone Code Credit : YT - @Tech_VJ / TG - @VJ_Bots / GitHub - @VJBots
+# Created By: Md Sahadat Hossen
+# Subscribe YouTube Channel: https://youtube.com/@loveranyanime?si=3sJqjGIXzfI7EyWp
+# telegram channel: @ss_anime_box
 
 import sys, glob, importlib, logging, logging.config, pytz, asyncio
 from pathlib import Path
@@ -19,9 +17,11 @@ logging.basicConfig(
 logging.getLogger("aiohttp").setLevel(logging.ERROR)
 logging.getLogger("aiohttp.web").setLevel(logging.ERROR)
 
-from pyrogram import Client, idle 
+from pyrogram import Client, filters, idle 
+from pyrogram.types import Message
 from database.users_chats_db import db
 from info import *
+import info
 from utils import temp
 from typing import Union, Optional, AsyncGenerator
 from Script import script 
@@ -39,9 +39,32 @@ TechVJBot.start()
 loop = asyncio.get_event_loop()
 
 
+# Live Shortener Toggle Command for Admins
+@TechVJBot.on_message(filters.command("shortlink") & filters.user(ADMINS))
+async def toggle_shortlink(client, message: Message):
+    if len(message.command) < 2:
+        status = "ENABLED ✅" if info.SHORTLINK else "DISABLED ❌"
+        return await message.reply_text(
+            f"<b>Current Shortlink Status:</b> {status}\n\n"
+            "<b>Usage:</b>\n"
+            "• <code>/shortlink on</code> - Enable Shortner\n"
+            "• <code>/shortlink off</code> - Disable Shortner"
+        )
+    
+    param = message.command[1].lower()
+    if param in ["on", "enable", "true"]:
+        info.SHORTLINK = True
+        await message.reply_text("<b>Shortlink Feature Has Been Enabled ✅</b>")
+    elif param in ["off", "disable", "false"]:
+        info.SHORTLINK = False
+        await message.reply_text("<b>Shortlink Feature Has Been Disabled ❌</b>")
+    else:
+        await message.reply_text("Invalid argument! Use <code>/shortlink on</code> or <code>/shortlink off</code>")
+
+
 async def start():
     print('\n')
-    print('Initalizing Your Bot')
+    print('Initalizing Your Bot - Md Sahadat Hossen')
     bot_info = await TechVJBot.get_me()
     await initialize_clients()
     for name in files:
@@ -54,7 +77,7 @@ async def start():
             load = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(load)
             sys.modules["plugins." + plugin_name] = load
-            print("Tech VJ Imported => " + plugin_name)
+            print("Md Sahadat Hossen Imported => " + plugin_name)
     if ON_HEROKU:
         asyncio.create_task(ping_server())
     me = await TechVJBot.get_me()
@@ -79,4 +102,3 @@ if __name__ == '__main__':
         loop.run_until_complete(start())
     except KeyboardInterrupt:
         logging.info('Service Stopped Bye 👋')
-
